@@ -1,16 +1,17 @@
 # NSI
-Ce dépôt contient toutes les implémentations python des structures et algorithmes vus en cours. Le but est de faciliter la réutilisation d'algorithmes ou de structures dans d'autres algorithmes et de fournir un exemple d'implémentation de ceux-ci. Ce fichier est un guide d'utilisation des classes et fonctions présentes dans les différents fichiers.
+Ce dépôt contient toutes les implémentations python des structures et algorithmes vus en cours. Le but est de faciliter la réutilisation d'algorithmes ou de structures dans d'autres algorithmes et de fournir un exemple d'implémentation de ceux-ci.   
+Ce fichier est un guide d'utilisation des classes et fonctions présentes dans les différents fichiers.
 
 ## Structures
-Dans le fichier `structure.py` on retrouve 4 classes utiles :\n
-• `Liste` représentant la structure linéaire "liste chainée" (ou linked-list en anglais)
-• `Pile` représentant la structure linéaire "pile" (ou stack en anglais)
-• `File` représentant la structure linéaire "file" (ou queue en anglais)
+Dans le fichier `structure.py` on retrouve 4 classes utiles :  
+• `Liste` représentant la structure linéaire "liste chainée" (ou linked-list en anglais)  
+• `Pile` représentant la structure linéaire "pile" (ou stack en anglais)  
+• `File` représentant la structure linéaire "file" (ou queue en anglais)  
 • `ABR` représentant la structure "arbre binaire de recherche"
 
 ### Liste
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
-Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant : 
+Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant :   
 
 ```python
 # créer une liste vide
