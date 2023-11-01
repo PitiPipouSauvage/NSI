@@ -8,11 +8,11 @@ Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :
 • `Pile` représentant la structure linéaire _pile_ (ou _stack_ en anglais)  
 • `File` représentant la structure linéaire _file_ (ou _queue_ en anglais)  
 • `ABR` représentant la structure _arbre binaire de recherche_  (ou _binary tree_ en anglais)
-  
+
 ### La _liste chainée_
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
 Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant :   
-   
+$$   
 ```python 
 # créer une liste chainée vide
 liste0 = Liste()
