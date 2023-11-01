@@ -51,7 +51,7 @@ print(liste) # produit l'affichage suivant : "(Liste:...,...,...)"
 
 ### La _pile_
 
-Les fonctionnalités de la classe `Pile` se trouvent dans les bloc suivant :  
+Les fonctionnalités de la classe `Pile` se trouvent dans les bloc suivant :    
 
 ```python
 pile = Pile(...) # fonctionne comme les liste chainées
@@ -72,7 +72,7 @@ print(pile) # affiche : (Pile:...,...,...), du premier à dépiler jusqu'au dern
 
 ### La _file_
 
-Les fonctionnalités de la classe `File` sont montrées dans le code suivant,
+Les fonctionnalités de la classe `File` sont montrées dans le code suivant : 
 
 ```python
 file = File(...) # vous avez compris
@@ -89,7 +89,7 @@ print(file) # produit l'affichage : (File:...,...,...), l'avant de la queue est 
 
 ### L'_arbre binaire de recherche_
 
-Dans le bloc de code suivant est détaillé le fonctionnement de la classe `ARB`,
+Dans le bloc de code suivant est détaillé le fonctionnement de la classe `ARB` :  
 
 ```python
 arbre = ARB(...) # avec des nombres car sinon les valeurs ne sont pas comparables
@@ -121,7 +121,7 @@ arbre.parcours_suffixe(fonction)
 arbre.afficher()
 ```
 
-Voilà le type d'affichage que fournis la fonction,
+Voilà le type d'affichage que produit la fonction :  
 
 ```console
             955
