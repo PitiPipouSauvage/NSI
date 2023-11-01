@@ -12,7 +12,7 @@ Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :
 ### La _liste chainée_
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
 Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant :   
-$$   
+$x$   
 ```python 
 # créer une liste chainée vide
 liste0 = Liste()
