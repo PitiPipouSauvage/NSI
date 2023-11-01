@@ -2,14 +2,14 @@
 Ce dépôt contient toutes les implémentations python des structures et algorithmes vus en cours. Le but est de faciliter la réutilisation d'algorithmes ou de structures dans d'autres algorithmes et de fournir un exemple d'implémentation de ceux-ci.   
 Ce fichier est un guide d'utilisation des classes et fonctions présentes dans les différents fichiers.
 
-## Structures
-Dans le fichier `structure.py` on retrouve 4 classes utiles :  
-• `Liste` représentant la structure linéaire "liste chainée" (ou linked-list en anglais)  
-• `Pile` représentant la structure linéaire "pile" (ou stack en anglais)  
-• `File` représentant la structure linéaire "file" (ou queue en anglais)  
+## Les structures
+Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :  
+• `Liste` représentant la structure linéaire _liste chainée_ (ou _linked-list_ en anglais)  
+• `Pile` représentant la structure linéaire _pile_ (ou _stack_ en anglais)  
+• `File` représentant la structure linéaire _file_ (ou _queue_ en anglais)  
 • `ABR` représentant la structure "arbre binaire de recherche"
 
-### Liste
+### La liste chainée
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
 Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant :   
 
