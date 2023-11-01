@@ -9,7 +9,7 @@ Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :
 • `File` représentant la structure linéaire _file_ (ou _queue_ en anglais)  
 • `ABR` représentant la structure _arbre binaire de recherche_  (ou _binary tree_ en anglais)
 
-### La _liste chainée_
+### I - La _liste chainée_
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python. Des exemples d'utilisation sont fournis dans le bloc de code suivant :
 
 ```python 
@@ -49,7 +49,7 @@ print(liste) # produit l'affichage suivant : "(Liste:...,...,...)"
 # si elle est vide cela l'affichage est : "(Liste)"
 ```
 
-### La _pile_
+### II - La _pile_
 
 Les fonctionnalités de la classe `Pile` se trouvent dans les bloc suivant :    
 
@@ -70,7 +70,7 @@ pile.vider()
 print(pile) # affiche : (Pile:...,...,...), du premier à dépiler jusqu'au dernier
 ```
 
-### La _file_
+### III - La _file_
 
 Les fonctionnalités de la classe `File` sont montrées dans le code suivant : 
 
@@ -87,7 +87,7 @@ file.vider()
 print(file) # produit l'affichage : (File:...,...,...), l'avant de la queue est à droite 
 ```
 
-### L'_arbre binaire de recherche_
+### VI - L'_arbre binaire de recherche_
 
 Dans le bloc de code suivant est détaillé le fonctionnement de la classe `ARB` :  
 
@@ -157,7 +157,7 @@ Voilà le type d'affichage que produit la fonction :
                   -651
 ```
 
-### Utilisation
+### V - Utilisation
 
 Pour utiliser les classes vues auparavant, il vous suffit d'avoir le fichier _"structures.py"_ dans le même dossier que votre fichier de test python. 
 ```python
