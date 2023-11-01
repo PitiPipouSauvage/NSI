@@ -156,3 +156,11 @@ Voilà le type d'affichage que produit la fonction :
                  \ /
                   -651
 ```
+
+### Utilisation
+
+Pour utiliser les classes vues auparavant, il vous suffit d'avoir le fichier _"structures.py"_ dans le même dossier que votre fichier de test python. 
+```python
+# écrire cette ligne de code en haut de votre fichier
+from structures import * 
+```
