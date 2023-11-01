@@ -10,29 +10,19 @@ Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :
 • `ABR` représentant la structure _arbre binaire de recherche_  (ou _binary tree_ en anglais)
 
 ### La _liste chainée_
-Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
-Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant,
+Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python. Des exemples d'utilisation sont fournis dans le bloc de code suivant :
 
 ```python 
-# créer une liste chainée vide
-liste0 = Liste()
+liste0 = Liste() # créer une liste chainée vide
 
-# créer une liste chainée avec un élément
-liste1 = Liste(1) 
-
-# créer une liste chainée contenant des éléments par défaut
-liste2 = Liste(['abc', 2, ('taple', 0)])
+liste1 = Liste(1) # créer une liste chainée avec un élément
+liste2 = Liste(['abc', 2, ('taple', 0)]) # créer une liste chainée contenant des éléments par défaut
 
 liste3 = Liste(liste1) # remplis liste3 avec les éléments de liste1
 # cela marche avec tous les classes itérables
-```  
-  
-On peut accéder aux valeurs d'une instance de la classe `Liste` des manières suivantes, 
-  
-```python
-liste = Liste(...) # une liste chainée (contenant des élements ou non)
 
 # accéder à un élément
+liste = List(...)
 i = ...
 print(liste[i])
 
@@ -42,11 +32,6 @@ for valeur in liste:
 
 # toutes les slices à pas positifs fonctionnent
 print(liste[i:]) # elle renvoie une liste chainée
-```
-   
-On peut ajouter des valeurs à la liste comme suit,
-```python
-liste = Liste(...)
 
 # ajouter des valeurs à la fin de la liste
 liste.etendre('je')
@@ -54,13 +39,8 @@ liste.etendre(['suis', 'con'])
 
 # ajouter des valeurs n'importe où
 liste.inserer(1, 'ne')
-liste.inserer(4, 'pas')
+liste.inserer(4, 'pas') # tout cela marche également avec plusieurs valeurs
 
-# cela marche également avec plusieurs valeurs
-```
-Voici les dernières utilisations possibles,
-
-```python
 liste.est_vide() # liste est-elle vide ?
 len(liste) # nombre d'éléments de liste
 liste.vider() # vide liste
@@ -71,7 +51,7 @@ print(liste) # produit l'affichage suivant : "(Liste:...,...,...)"
 
 ### La _pile_
 
-Les fonctionnalités de la classe `Pile` se trouvent dans les bloc suivant,
+Les fonctionnalités de la classe `Pile` se trouvent dans les bloc suivant :  
 
 ```python
 pile = Pile(...) # fonctionne comme les liste chainées
