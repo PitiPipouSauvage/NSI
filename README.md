@@ -12,7 +12,7 @@ Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :
 ### La _liste chainée_
 Pour la classe `Liste`, elle regroupe la majorité des fonction des `list` de python.
 Pour en créer une instance, on peut utiliser toutes les méthodes du bloc suivant :   
-$x$   
+
 ```python 
 # créer une liste chainée vide
 liste0 = Liste()
@@ -30,7 +30,7 @@ liste3 = Liste(liste1) # remplis liste3 avec les éléments de liste1
 On peut accéder aux valeurs d'une instance de la classe `Liste` des manières suivantes :  
   
 ```python
-liste = Liste(...) # une liste chainée contenant des élements (ou non)
+liste = Liste(...) # une liste chainée (contenant des élements ou non)
 
 # accéder à un élément
 i = ...
@@ -46,5 +46,15 @@ print(liste[i:]) # elle renvoie une liste chainée
    
 On peut ajouter des valeurs à la liste comme suit :
 ```python
+liste = Liste(...)
 
+# ajouter des valeurs à la fin de la liste
+liste.etendre('je')
+liste.etendre(['suis', 'con'])
+
+# ajouter des valeurs n'importe où
+liste.inserer(1, 'ne')
+liste.inserer(4, 'pas')
+# cela marche également avec plusieurs valeurs
 ```
+
