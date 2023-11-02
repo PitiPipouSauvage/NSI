@@ -1,7 +1,7 @@
 # NSI
 Ce dépôt contient toutes les implémentations python des structures et algorithmes vus en cours. Le but est de faciliter la réutilisation d'algorithmes ou de structures dans d'autres algorithmes et de fournir un exemple d'implémentation de ceux-ci.   
 Ce fichier est un guide d'utilisation des classes et fonctions présentes dans les différents fichiers.
-
+= Lol
 ## Les algorithmes
 
 ### I - Première
