@@ -116,10 +116,10 @@ print(file) # produit l'affichage : (File:...,...,...), l'avant de la queue est 
 
 ### VI - L'_arbre binaire de recherche_
 
-Dans le bloc de code suivant est détaillé le fonctionnement de la classe `ARB` :  
+Dans le bloc de code suivant est détaillé le fonctionnement de la classe `ABR` :  
 
 ```python
-arbre = ARB(...) # avec des nombres car sinon les valeurs ne sont pas comparables
+arbre = ABR(...) # avec des nombres car sinon les valeurs ne sont pas comparables
 arbre.inserer(...)
 
 arbre.est_vide()
@@ -195,4 +195,4 @@ from structures import *
 ```
 ## En progrès
 
-J'essairai d'ajouter les algorithmes ou structures au fur et à mesure de l'année ...
+J'essaierai d'ajouter les algorithmes ou structures au fur et à mesure de l'année ...
