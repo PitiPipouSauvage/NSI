@@ -1,40 +1,41 @@
-from collections.abc import Iterable
+from collections.abc import Iterable # servira pour determiner si un objet est iterable
 
-# Les noeuds
+# ------- Les noeuds ------- #
  
 class Noeud:
     def __init__(self, valeur, suivant = None):
         self.valeur = valeur
         self.suivant = suivant
 
-class NoeudBinaire:
+
+class NoeudBinaire: # servira pour les arbres binaires (de recherche)
     def __init__(self, valeur, gauche = None, droit = None):
         self.valeur = valeur
         self.gauche = gauche
         self.droit = droit
 
-# ----- Liste ----- #
+# ------- La liste chainee ------- #
 
 class Liste:
     def __init__(self, valeurs = []):
         self.debut = None
         self.etendre(valeurs)
         
-    def vider(self, valeurs = []):
-        self.__init__(valeurs)
+    def vider(self, valeurs = []): 
+        self.__init__(valeurs) 
     
     def etendre(self, valeurs):
-        self.inserer(len(self), valeurs)
+        self.inserer(len(self), valeurs) # attention : len() utilise la methode __len__ de la classe (voir plus bas)
         
     def inserer(self, index, valeurs):
-        if not isinstance(valeurs, Iterable):
+        if not isinstance(valeurs, Iterable): # verifie si l'entree n'est iterable pas (en gros si ce n'est pas une liste)
             valeurs = [valeurs]
-        elif not valeurs:
+        elif not valeurs: # si l'entree est vide (si valeur == [])
             return
 
-        if self.debut == None:
+        if self.debut == None: 
             self.debut = Noeud(valeurs[0])
-            valeurs = valeurs[1:]
+            valeurs = valeurs[1:] # on utilise les slices pour retirer la premiere valeur de la liste
 
         i = 0
         noeud = self.debut
@@ -52,9 +53,29 @@ class Liste:
     def est_vide(self):
         return len(self) == 0
 
-    # par default
+    def __str__(self): # renvoie la façon dont on veut afficher l'objet
+        chaine = '(Liste:'
+        
+        for valeur in self:
+            chaine += f' {valeur},'
+            
+        chaine = chaine[:-1] + ')'
+        return chaine
 
-    def __getitem__(self, item):
+    def __len__(self): # renvoie la taille de l'objet
+        i = 0
+        
+        for valeur in self:
+            i += 1
+
+        return i
+
+    # les methodes suivantes sont un peu compliquees et non essentielles a la comprehension du programme,
+    # elles servent par exemple a utiliser la classe dans une boucle, acceder a un element, une slice ...
+    # ne perdez pas votre temps a essayer de les comprendre
+    
+    def __getitem__(self, item): 
+
         if isinstance(item, int):
             
             if item >= len(self):
@@ -73,21 +94,24 @@ class Liste:
 
             taille = len(self)
             
-            if item.start == None: start = 0
+            if item.start == None:
+                start = 0
             else:
                 if -taille <= item.start <= taille:
                     start = item.start % taille               
                 else:
                     raise IndexError
 
-            if item.stop == None: stop = taille 
+            if item.stop == None:
+                stop = taille 
             else:
                 if -taille <= item.stop <= taille:
                     stop = item.stop % taille
                 else:
                     raise IndexError
 
-            if item.step == None: step = 1
+            if item.step == None:
+                step = 1
             else:
                 if item.step < 1:
                     raise NotImplemented
@@ -116,30 +140,13 @@ class Liste:
         noeud = self.debut
         
         while noeud != None:
-            yield noeud.valeur
-            noeud = noeud.suivant
+            yield noeud.valeur 
+            noeud = noeud.suivant 
 
     def __repr__(self):
         return str(self)
-        
-    def __str__(self):
-        chaine = '(Liste:'
-        
-        for valeur in self:
-            chaine += f' {valeur},'
-            
-        chaine = chaine[:-1] + ')'
-        return chaine
 
-    def __len__(self):
-        i = 0
-        
-        for valeur in self:
-            i += 1
-
-        return i
-
-# ----- Pile ----- #
+# ------- La pile ------- #
 
 class Pile: 
     def __init__(self, valeurs = []):
@@ -185,11 +192,6 @@ class Pile:
     def est_vide(self):
         return len(self) == 0
     
-    # par default
-
-    def __repr__(self):
-        return str(self)
-
     def __str__(self):
         chaine = '(Pile:' 
         noeud = self.sommet
@@ -211,11 +213,14 @@ class Pile:
             
         return i
 
-# ----- File ----- #
+    def __repr__(self):
+        return str(self)
+
+# ------- La file ------- #
 
 class File:
     def __init__(self, valeurs = []):
-        self.tete = None
+        self.tete = None 
         self.enfiler(valeurs)
 
     def vider(self, valeurs = []):
@@ -262,11 +267,6 @@ class File:
     def est_vide(self):
         return len(self) == 0
 
-    # par default
-
-    def __repr__(self):
-        return str(self)
-
     def __str__(self):
         chaine = ''
         noeud = self.tete
@@ -288,9 +288,11 @@ class File:
 
         return i
 
-# ----- ABR ----- #
-    
+    def __repr__(self):
+        return str(self)
 
+# ------- L'arbre binaire de recherche ------- #
+    
 class ABR:
     def __init__(self, valeurs = []):
         self.racine = None
@@ -300,6 +302,21 @@ class ABR:
         self.__init__(valeurs)
 
     def inserer(self, valeurs = []):
+
+        # on definit une fonction a l'interieur d'une autre pour la cacher a l'utilisateur
+        def interne(noeud, valeur): # on a besoin d'une fonction recursive sur les noeuds et non sur la classe ABR
+            if valeur < noeud.valeur:
+                if noeud.gauche == None:
+                    noeud.gauche = NoeudBinaire(valeur)
+                else:
+                    interne(noeud.gauche, valeur)
+
+            elif valeur > noeud.valeur:
+                if noeud.droit == None:
+                    noeud.droit = NoeudBinaire(valeur)
+                else:
+                    interne(noeud.droit, valeur)
+            
         if not isinstance(valeurs, Iterable):
             valeurs = [valeurs]
         elif not valeurs:
@@ -310,30 +327,8 @@ class ABR:
             valeurs = valeurs[1:]
             
         for valeur in valeurs:
-            noeud = self.racine
-
-            while True:
-                if valeur < noeud.valeur:
-                    
-                    if noeud.gauche == None:
-                        noeud.gauche = NoeudBinaire(valeur)
-                        break
-
-                    else:
-                        noeud = noeud.gauche
-                        continue
-
-                if valeur > noeud.valeur:
-
-                    if noeud.droit == None:
-                        noeud.droit = NoeudBinaire(valeur)
-                        break
-
-                    else:
-                        noeud = noeud.droit
-                        continue
-                break
-
+            interne(self.racine, valeur)
+            
     def est_vide(self):
         return self.racine == None
 
@@ -357,7 +352,7 @@ class ABR:
 
         return interne(self.racine)
 
-    def parcours_prefixe(self, fonction = lambda x : print(x)):
+    def parcours_prefixe(self, fonction):
 
         def interne(noeud, fonction):
             fonction(noeud.valeur)
@@ -400,7 +395,7 @@ class ABR:
             interne(self.racine, fonction)
 
     def parcours_largeur(self, fonction):
-        file = File(self.racine)
+        file = File(self.racine) # nous permet d'utiliser notre classe File
         
         while not file.est_vide():
             noeud = file.defiler()
@@ -418,6 +413,7 @@ class ABR:
         
         while noeud != None:
             profondeur += 1
+
             if valeur == noeud.valeur:
                 return profondeur
             if valeur < noeud.valeur:
@@ -427,7 +423,10 @@ class ABR:
 
         return profondeur
 
+    # cette methode est compliquee mais tres pratique pour visualiser l'arbre (essayez qu'il ne soit pas trop grand)
+    # ne perdez pas votre temps a tenter de la comprendre
     def afficher(self):
+        
         def vide(ligne):
             for caractere in ligne:
                 if caractere != ' ':
@@ -495,4 +494,4 @@ class ABR:
         for ligne in tableau:
             if not vide(ligne):
                 print(ligne)
-                
+
