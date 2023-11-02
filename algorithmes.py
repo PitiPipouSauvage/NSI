@@ -1,8 +1,9 @@
-# ------- Première ------- #
+# ------- Premiere ------- #
 
 def recherche_dichotomique(liste, element):
     a = 0
     b = len(liste)
+    
     while a < b:
         m = (a + b)//2
         if  liste[m] < element:
@@ -11,8 +12,7 @@ def recherche_dichotomique(liste, element):
             b = m-1
         else:
             return m
-        
-        
+            
     if liste[a] == element:
        return a
 
