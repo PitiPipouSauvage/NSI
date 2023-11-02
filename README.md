@@ -2,8 +2,34 @@
 Ce dépôt contient toutes les implémentations python des structures et algorithmes vus en cours. Le but est de faciliter la réutilisation d'algorithmes ou de structures dans d'autres algorithmes et de fournir un exemple d'implémentation de ceux-ci.   
 Ce fichier est un guide d'utilisation des classes et fonctions présentes dans les différents fichiers.
 
+## Les algorithmes
+
+### I - Première
+
+Le fichier _"algorithmes.py"_ rassemble les algorithmes vus au cours de l'année.  
+J'ai tout de même inclus les algorithmes de trie et la recherche dichotomique du programme de première :  
+
+• la fonction `recherche_dichotomique(liste, element)` renvoie l'indice de l'élement recherché ou `None` s'il n'existe pas  
+• la fonction `trie_selection(liste)` trie la liste en utilisant l'algorithme de trie par séléction  
+• la fonction `trie_insertion(liste)` trie la liste en utilisant l'algorithme de trie par insertion  
+
+Vous pouvez aller voir l'implémentation des fonctions dans le fichier python.
+
+## II - Terminale 
+
+Pour l'instant le néan ...
+
+## III - Utilisation
+
+Il suffit d'avoir le fichier _"algorithmes.py"_ dans le dossier du fichier de test et d'inclure la ligne suivante en haut de celui-ci : 
+```python
+from algorithmes import * 
+```
+et vous pouvez utiliser les fonctions décrites auparvant.
+
 ## Les structures
 Dans le fichier _"structure.py"_ on retrouve 4 classes utiles :  
+
 • `Liste` représentant la structure linéaire _liste chainée_ (ou _linked-list_ en anglais)  
 • `Pile` représentant la structure linéaire _pile_ (ou _stack_ en anglais)  
 • `File` représentant la structure linéaire _file_ (ou _queue_ en anglais)  
@@ -117,6 +143,8 @@ def fonction(valeur):
 
 arbre.parcours_suffixe(fonction)
 
+arbre.parcours_largeur(lambda x : print(x**3))
+
 # enfin on peut afficher l'arbre à l'aide de la méthode suivante
 arbre.afficher()
 ```
@@ -164,3 +192,6 @@ Pour utiliser les classes vues auparavant, il vous suffit d'avoir le fichier _"s
 # écrire cette ligne de code en haut de votre fichier
 from structures import * 
 ```
+## En progrès
+
+J'essairai d'ajouter les algorithmes ou structures au fur et à mesure de l'année ...
